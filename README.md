@@ -1,6 +1,6 @@
 # pharo-sentry
-[![Build Status][travis-badge]](travis)
-[![Coverage Status][coveralls-badge]](coveralls)
+[![Build Status][travis-badge]][travis]
+[![Coverage Status][coveralls-badge]][coveralls]
 
 Unofficial & Experimental Pharo SDK for [sentry.io](https://docs.sentry.io/clientdev/).
 
