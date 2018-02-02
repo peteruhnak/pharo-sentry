@@ -4,6 +4,9 @@ baseline: spec
 	spec
 		for: #common
 		do: [ spec
+				baseline: 'Beacon'
+				with: [ spec repository: 'github://pharo-project/pharo-beacon/repository' ].
+			spec
 				package: 'Sentry-Core';
 				package: 'Sentry-Beacon' with: [ spec requires: #('Sentry-Core' 'Beacon') ];
 				package: 'Sentry-Debugger' with: [ spec requires: #('Sentry-Core') ];
