@@ -1,0 +1,14 @@
+{
+	"commentStamp" : "",
+	"super" : "SentryInterface",
+	"category" : "Sentry-Core-Model",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"frames",
+		"framesOmitted"
+	],
+	"name" : "SentryStacktrace",
+	"type" : "normal"
+}

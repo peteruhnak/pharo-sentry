@@ -1,0 +1,1 @@
+I take a Sentry data object (Event or an Interface) and produce a Dictionary.

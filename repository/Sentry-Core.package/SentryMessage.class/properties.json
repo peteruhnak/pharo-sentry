@@ -1,0 +1,15 @@
+{
+	"commentStamp" : "",
+	"super" : "SentryInterface",
+	"category" : "Sentry-Core-Model",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"message",
+		"params",
+		"formatted"
+	],
+	"name" : "SentryMessage",
+	"type" : "normal"
+}

@@ -1,0 +1,16 @@
+{
+	"commentStamp" : "",
+	"super" : "SentryInterface",
+	"category" : "Sentry-Core-Model",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"type",
+		"value",
+		"module",
+		"stacktrace"
+	],
+	"name" : "SentryExceptionValue",
+	"type" : "normal"
+}

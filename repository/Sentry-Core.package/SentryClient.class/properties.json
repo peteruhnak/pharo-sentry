@@ -1,0 +1,17 @@
+{
+	"commentStamp" : "PeterUhnak 2/2/2018 15:08",
+	"super" : "Object",
+	"category" : "Sentry-Core-Model",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"dsn",
+		"appPackages",
+		"isInApp",
+		"beforeSend",
+		"transport"
+	],
+	"name" : "SentryClient",
+	"type" : "normal"
+}

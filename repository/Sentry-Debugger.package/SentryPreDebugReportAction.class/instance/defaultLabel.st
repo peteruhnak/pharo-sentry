@@ -1,0 +1,3 @@
+actions
+defaultLabel
+	^ 'Report (Sentry)'

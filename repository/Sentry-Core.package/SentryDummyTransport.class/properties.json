@@ -1,0 +1,13 @@
+{
+	"commentStamp" : "",
+	"super" : "SentryTransport",
+	"category" : "Sentry-Core-Model",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"onSend"
+	],
+	"name" : "SentryDummyTransport",
+	"type" : "normal"
+}

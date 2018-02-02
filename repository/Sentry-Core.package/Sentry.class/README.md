@@ -1,0 +1,1 @@
+I am a facade for a global sentry client.

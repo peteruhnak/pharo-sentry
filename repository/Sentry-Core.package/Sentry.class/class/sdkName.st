@@ -1,0 +1,3 @@
+accessing
+sdkName
+	^ 'sentry-pharo'

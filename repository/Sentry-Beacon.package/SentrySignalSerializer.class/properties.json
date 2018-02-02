@@ -1,0 +1,11 @@
+{
+	"commentStamp" : "",
+	"super" : "SignalSerializer",
+	"category" : "Sentry-Beacon",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "SentrySignalSerializer",
+	"type" : "normal"
+}

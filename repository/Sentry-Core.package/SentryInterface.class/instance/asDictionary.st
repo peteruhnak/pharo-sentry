@@ -1,0 +1,3 @@
+converting
+asDictionary
+	^ self subclassResponsibility

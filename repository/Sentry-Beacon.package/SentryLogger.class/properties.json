@@ -1,0 +1,11 @@
+{
+	"commentStamp" : "",
+	"super" : "SerializingLogger",
+	"category" : "Sentry-Beacon",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "SentryLogger",
+	"type" : "normal"
+}

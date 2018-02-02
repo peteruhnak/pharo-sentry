@@ -1,0 +1,11 @@
+{
+	"commentStamp" : "PeterUhnak 2/2/2018 15:55",
+	"super" : "PreDebugAction",
+	"category" : "Sentry-Debugger",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "SentryPreDebugReportAction",
+	"type" : "normal"
+}
