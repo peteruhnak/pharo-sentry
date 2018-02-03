@@ -1,3 +1,3 @@
 testing
 isEnabled
-	^ dsn isEmpty not
+	^ dsn isEmpty not & Sentry enabled
