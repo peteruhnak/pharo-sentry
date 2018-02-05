@@ -6,7 +6,7 @@ asDictionary
 			(SentryConverter new
 				asDictionary: self
 				keys: #(logger platform sdk)
-				optional: #(level culprit serverName release tags environment modules extra fingerprint)).
+				optional: #(level contexts culprit serverName release tags environment modules extra fingerprint)).
 	dict
 		at: 'tags'
 		ifPresent: [ :t | 

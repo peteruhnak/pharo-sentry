@@ -1,5 +1,5 @@
 {
-	"commentStamp" : "",
+	"commentStamp" : "PeterUhnak 2/5/2018 18:57",
 	"super" : "SerializingLogger",
 	"category" : "Sentry-Beacon",
 	"classinstvars" : [ ],
