@@ -8,9 +8,13 @@ SmalltalkCISpec {
 		}
 	],
 	#testing : {
-		#packages : [ 'Sentry-Core', 'Sentry-Beacon', 'Sentry-Debugger', 'Sentry-Tests' ],
 		#coverage : {
-			#packages : [ 'Sentry-Core', 'Sentry-Beacon', 'Sentry-Debugger', 'Sentry-Tests' ]
-		}
+			#packages : [
+				'Sentry.*'
+			]
+		},
+		#packages : [
+			'Sentry.*'
+		]
 	}
 }
