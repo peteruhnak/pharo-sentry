@@ -14,4 +14,11 @@ testAsDictionary
 			'sdk'
 				->
 					{'name' -> Sentry sdkName.
-					'version' -> Sentry sdkVersion} asDictionary} asDictionary
+					'version' -> Sentry sdkVersion} asDictionary.
+			'contexts'
+				->
+					{'runtime'
+						->
+							{'name' -> 'Pharo'.
+							'version' -> SystemVersion current highestUpdate} asDictionary} asDictionary}
+				asDictionary

@@ -1,5 +1,5 @@
 {
-	"commentStamp" : "",
+	"commentStamp" : "PeterUhnak 2/5/2018 19:27",
 	"super" : "Object",
 	"category" : "Sentry-Core-Model",
 	"classinstvars" : [ ],
@@ -21,7 +21,8 @@
 		"extra",
 		"fingerprint",
 		"message",
-		"exception"
+		"exception",
+		"contexts"
 	],
 	"name" : "SentryEvent",
 	"type" : "normal"
