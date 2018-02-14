@@ -3,8 +3,7 @@ SmalltalkCISpec {
 		SCIMetacelloLoadSpec {
 			#baseline : 'Sentry',
 			#directory : 'repository',
-			#platforms : [ #pharo ],
-			#useLatestMetacello : true
+			#platforms : [ #pharo ]
 		}
 	],
 	#testing : {
