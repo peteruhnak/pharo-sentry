@@ -10,7 +10,8 @@
 		"appPackages",
 		"isInApp",
 		"beforeSend",
-		"transport"
+		"transport",
+		"lastEvent"
 	],
 	"name" : "SentryClient",
 	"type" : "normal"

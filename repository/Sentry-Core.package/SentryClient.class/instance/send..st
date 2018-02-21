@@ -5,4 +5,5 @@ send: anEvent
 	self assert: [ dsn isNotNil ] description: 'DSN wasn''t configured.'.
 	beforeSend value: anEvent.
 	self transport send: anEvent asDictionary to: dsn.
+	lastEvent := anEvent.
 	^ anEvent eventId

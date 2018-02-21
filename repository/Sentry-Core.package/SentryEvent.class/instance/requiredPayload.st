@@ -1,4 +1,4 @@
 accessing - special
 requiredPayload
-	^ {'event_id' -> (self uuid32For: self eventId).
+	^ {'event_id' -> self eventIdString.
 	'timestamp' -> (self isoTimestampFor: self timestamp)} asDictionary
