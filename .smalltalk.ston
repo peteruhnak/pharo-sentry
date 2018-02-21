@@ -3,14 +3,17 @@ SmalltalkCISpec {
 		SCIMetacelloLoadSpec {
 			#baseline : 'Sentry',
 			#directory : 'repository',
-			#platforms : [ #pharo ],
-			#useLatestMetacello : true
+			#platforms : [ #pharo ]
 		}
 	],
 	#testing : {
-		#packages : [ 'Sentry-Core', 'Sentry-Beacon', 'Sentry-Debugger', 'Sentry-Tests' ],
 		#coverage : {
-			#packages : [ 'Sentry-Core', 'Sentry-Beacon', 'Sentry-Debugger', 'Sentry-Tests' ]
-		}
+			#packages : [
+				'Sentry.*'
+			]
+		},
+		#packages : [
+			'Sentry.*'
+		]
 	}
 }
