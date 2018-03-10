@@ -1,4 +1,4 @@
-sending
+examples
 sendSampleEvent
 	^ [ self error: 'Sample Exception' ]
 		on: Exception
