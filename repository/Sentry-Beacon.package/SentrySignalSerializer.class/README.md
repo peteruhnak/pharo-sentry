@@ -1,0 +1,1 @@
+I turn a BeaconSignal into its Sentry Event equivalent.
