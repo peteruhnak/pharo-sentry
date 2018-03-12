@@ -1,4 +1,4 @@
-tests
+tests - accessing
 testBeforeSend
 	| event |
 	client transport: SentryDummyTransport new.

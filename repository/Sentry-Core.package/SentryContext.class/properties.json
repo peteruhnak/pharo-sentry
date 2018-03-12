@@ -1,0 +1,16 @@
+{
+	"commentStamp" : "PeterUhnak 3/11/2018 20:56",
+	"super" : "SentryBaseContext",
+	"category" : "Sentry-Core-Model",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"user",
+		"request",
+		"extra",
+		"tags"
+	],
+	"name" : "SentryContext",
+	"type" : "normal"
+}

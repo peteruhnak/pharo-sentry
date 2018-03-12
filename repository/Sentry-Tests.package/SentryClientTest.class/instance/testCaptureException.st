@@ -1,4 +1,4 @@
-tests
+tests - capturing
 testCaptureException
 	| data |
 	client transport onSend: [ :dict :dsn | data := dict ].

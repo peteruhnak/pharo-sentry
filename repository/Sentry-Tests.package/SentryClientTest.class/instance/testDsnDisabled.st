@@ -1,4 +1,4 @@
-tests
+tests - accessing
 testDsnDisabled
 	client dsn: ''.
 	self deny: client isEnabled.

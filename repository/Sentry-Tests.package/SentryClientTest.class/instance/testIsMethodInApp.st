@@ -1,4 +1,4 @@
-tests
+tests - testing
 testIsMethodInApp
 	| method |
 	method := SentryClientTest >> #testIsMethodInApp.

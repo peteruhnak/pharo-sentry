@@ -1,0 +1,3 @@
+converting
+merge: aCollectionOrContext
+	self subclassResponsibility

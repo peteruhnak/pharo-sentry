@@ -1,5 +1,6 @@
 sending
 send: aDictionary to: aDsn
+	enableNotifications := aDictionary includesKey: 'exception'.
 	self
 		postClient:
 			(ZnClient new

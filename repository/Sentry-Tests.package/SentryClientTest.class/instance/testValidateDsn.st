@@ -1,4 +1,4 @@
-tests
+tests - validation
 testValidateDsn
 	self
 		shouldnt: [ client validateDsn: 'https://public:secret@sentry.example.com/1' asZnUrl ]

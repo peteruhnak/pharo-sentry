@@ -1,6 +1,6 @@
 sending
 processResponse: aResponse
-	Sentry showNotification
+	Sentry showNotification & enableNotifications
 		ifFalse: [ ^ self ].
 	aResponse isSuccess
 		ifTrue: [ ^ self inform: 'Error report sent.' ].

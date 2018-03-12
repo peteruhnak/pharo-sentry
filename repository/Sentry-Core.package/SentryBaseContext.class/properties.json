@@ -1,13 +1,11 @@
 {
 	"commentStamp" : "",
-	"super" : "SentryTransport",
+	"super" : "SentryInterface",
 	"category" : "Sentry-Core-Model",
 	"classinstvars" : [ ],
 	"pools" : [ ],
 	"classvars" : [ ],
-	"instvars" : [
-		"enableNotifications"
-	],
-	"name" : "SentryHttpTransport",
+	"instvars" : [ ],
+	"name" : "SentryBaseContext",
 	"type" : "normal"
 }

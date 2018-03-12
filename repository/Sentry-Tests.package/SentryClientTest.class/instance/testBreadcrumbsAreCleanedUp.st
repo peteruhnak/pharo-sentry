@@ -1,9 +1,9 @@
-tests
-testCaptureBreadcrumbsAreCleanedUp
+tests - breadcrumbs
+testBreadcrumbsAreCleanedUp
 	| data |
 	client transport onSend: [ :dict :dsn | data := dict ].
 	client
-		captureBreadcrumbIn: [ :crumb | 
+		recordBreadcrumbIn: [ :crumb | 
 			crumb
 				category: 'test';
 				message: 'hello' ].

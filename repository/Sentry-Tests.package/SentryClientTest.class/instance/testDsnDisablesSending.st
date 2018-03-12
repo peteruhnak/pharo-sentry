@@ -1,4 +1,4 @@
-tests
+tests - accessing
 testDsnDisablesSending
 	| sent |
 	sent := false.

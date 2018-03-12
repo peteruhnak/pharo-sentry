@@ -1,5 +1,5 @@
 capturing
-captureBreadcrumbIn: aOneArgBlock
+recordBreadcrumbIn: aOneArgBlock
 	| crumb |
 	crumb := SentryBreadcrumb new.
 	aOneArgBlock value: crumb.

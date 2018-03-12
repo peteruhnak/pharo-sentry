@@ -1,13 +1,14 @@
 {
 	"commentStamp" : "",
-	"super" : "SentryTransport",
-	"category" : "Sentry-Core-Model",
+	"super" : "TestCase",
+	"category" : "Sentry-Tests",
 	"classinstvars" : [ ],
 	"pools" : [ ],
 	"classvars" : [ ],
 	"instvars" : [
-		"enableNotifications"
+		"client",
+		"context"
 	],
-	"name" : "SentryHttpTransport",
+	"name" : "SentryContextTest",
 	"type" : "normal"
 }
