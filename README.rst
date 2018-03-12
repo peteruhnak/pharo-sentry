@@ -19,7 +19,7 @@ For more in-depth documentation see https://peteruhnak.github.io/pharo-sentry/
 Installation
 ============
 
-::
+.. code-block:: smalltalk
 
 	Metacello new
 		baseline: 'Sentry';
@@ -32,7 +32,9 @@ Basic Usage
 Capturing an Exception
 ----------------------
 
-Exceptions are automatically serialized and dispatched::
+Exceptions are automatically serialized and dispatched:
+
+.. code-block:: smalltalk
 
 	client := SentryClient dsn: 'https://<key>:<secret>@sentry.io/<project>'.
 
@@ -43,7 +45,9 @@ Exceptions are automatically serialized and dispatched::
 Sending a Message
 -----------------
 
-Messages contain arbitrary content that can help you debug your application or collect additional information::
+Messages contain arbitrary content that can help you debug your application or collect additional information:
+
+.. code-block:: smalltalk
 
 	client captureMessage: 'The sun didn''t rise'
 
@@ -51,7 +55,9 @@ Sending Sample Events
 ---------------------
 
 To verify that your everything is configured correctly, you can send sample exceptions and events.
-This can be done either by setting the ``level`` of the event to ``sample``. Or you can use ready-to-use events::
+This can be done either by setting the ``level`` of the event to ``sample``. Or you can use ready-to-use events:
+
+.. code-block:: smalltalk
 
 	client sendSampleException.
 
@@ -64,13 +70,17 @@ This can be done either by setting the ``level`` of the event to ``sample``. Or 
 Using Beacon
 ============
 
-*pharo-sentry* includes a Beacon logger called ``SentryLogger`` that serializes and dispatches exceptions via sentry::
+*pharo-sentry* includes a Beacon logger called ``SentryLogger`` that serializes and dispatches exceptions via sentry:
+
+.. code-block:: smalltalk
 
 	SentryLogger new runDuring: [
 		[ 1/0 ] on: Exception do: [ :ex | ex emit ]
 	].
 
-Likewise string-based signals are serialized into sentry messages::
+Likewise string-based signals are serialized into sentry messages:
+
+.. code-block:: smalltalk
 
 	SentryLogger start.
 	StringSignal emit: 'test'.
