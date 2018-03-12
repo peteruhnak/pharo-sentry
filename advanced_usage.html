@@ -1,0 +1,371 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Advanced Usage &mdash; Pharo Sentry 0.2.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="_static/css/custom.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="Index"
+              href="genindex.html"/>
+        <link rel="search" title="Search" href="search.html"/>
+    <link rel="top" title="Pharo Sentry 0.2.0 documentation" href="index.html"/>
+        <link rel="next" title="Beacon" href="beacon.html"/>
+        <link rel="prev" title="Getting Started" href="getting_started.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Pharo Sentry
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="getting_started.html">Getting Started</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Advanced Usage</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#capturing">Capturing</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#automatic-exception-capture">Automatic Exception Capture</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#parametrized-messages">Parametrized Messages</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#breadcrumbs">Breadcrumbs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#configuration">Configuration</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#event-configuration">Event Configuration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#last-minute-configuration">Last-minute Configuration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#context-configuration">Context Configuration</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#pharo-specific">Pharo-Specific</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#in-app-configuration">in_app Configuration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#retrieving-last-event">Retrieving Last Event</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="beacon.html">Beacon</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="settings.html">Debugger &amp; Settings</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Pharo Sentry</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>Advanced Usage</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/advanced_usage.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="advanced-usage">
+<h1>Advanced Usage<a class="headerlink" href="#advanced-usage" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="capturing">
+<h2>Capturing<a class="headerlink" href="#capturing" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="automatic-exception-capture">
+<h3>Automatic Exception Capture<a class="headerlink" href="#automatic-exception-capture" title="Permalink to this headline">¶</a></h3>
+<p>Any exceptions that occur in the block will be automatically handled and dispatched:</p>
+<div class="highlight-smalltalk notranslate"><div class="highlight"><pre><span></span><span class="nv">client</span> <span class="nf">captureExceptionsDuring:</span> [
+	<span class="m">1</span><span class="nf">/</span><span class="m">0</span>
+]<span class="p">.</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="parametrized-messages">
+<h3>Parametrized Messages<a class="headerlink" href="#parametrized-messages" title="Permalink to this headline">¶</a></h3>
+<p>Messages can be expressed as templates with parameters provided separately. The formatting will be performed on the sentry server:</p>
+<div class="highlight-smalltalk notranslate"><div class="highlight"><pre><span></span><span class="nv">client</span> <span class="nf">captureMessage:</span> <span class="s">&#39;Length of &quot;%s&quot; is %d.&#39;</span> <span class="nf">params:</span> <span class="ss">#(</span><span class="s">&#39;hello&#39;</span> <span class="m">5</span><span class="ss">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="breadcrumbs">
+<h2>Breadcrumbs<a class="headerlink" href="#breadcrumbs" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="https://docs.sentry.io/clientdev/interfaces/breadcrumbs/">Breadcrumbs</a> are a trail of events that are buffered until a problem occurs:</p>
+<div class="highlight-smalltalk notranslate"><div class="highlight"><pre><span></span><span class="nv">client</span> <span class="nf">recordBreadcrumbIn:</span> [ <span class="o">:</span><span class="nv">crumb</span> <span class="o">|</span>
+	<span class="nv">crumb</span> <span class="nf">category:</span> <span class="s">&#39;trace.division&#39;</span><span class="p">.</span>
+	<span class="nv">crumb</span> <span class="nf">level:</span> <span class="s">&#39;debug&#39;</span><span class="p">.</span>
+	<span class="nv">crumb</span> <span class="nf">data:</span> { <span class="s">&#39;numerator&#39;</span> <span class="nf">-&gt;</span> <span class="m">1</span> } <span class="nf">asDictionary</span><span class="p">.</span>
+	<span class="nv">crumb</span> <span class="nf">message:</span> <span class="s">&#39;numerator is 1&#39;</span>
+]<span class="p">.</span>
+
+<span class="nv">client</span> <span class="nf">recordBreadcrumbIn:</span> [ <span class="o">:</span><span class="nv">crumb</span> <span class="o">|</span>
+	<span class="nv">crumb</span> <span class="nf">category:</span> <span class="s">&#39;trace.division&#39;</span><span class="p">.</span>
+	<span class="nv">crumb</span> <span class="nf">level:</span> <span class="s">&#39;debug&#39;</span><span class="p">.</span>
+	<span class="nv">crumb</span> <span class="nf">data:</span> { <span class="s">&#39;denominator&#39;</span> <span class="nf">-&gt;</span> <span class="m">0</span> } <span class="nf">asDictionary</span><span class="p">.</span>
+	<span class="nv">crumb</span> <span class="nf">message:</span> <span class="s">&#39;denominator is 0&#39;</span>
+]<span class="p">.</span>
+
+<span class="nv">client</span> <span class="nf">captureExceptionsDuring:</span> [ <span class="m">1</span> <span class="nf">/</span> <span class="m">0</span> ]<span class="p">.</span>
+</pre></div>
+</div>
+<div class="figure" id="id2">
+<img alt="_images/sentry-breadcrumbs.png" src="_images/sentry-breadcrumbs.png" />
+<p class="caption"><span class="caption-text">Trail of breadcrumbs in the UI</span></p>
+</div>
+<p>Once a message or expection is captured, all previous breadcrumbs are sent together with the event, and the buffer is cleared.
+If needed, breadcrumbs can be cleared manually:</p>
+<div class="highlight-smalltalk notranslate"><div class="highlight"><pre><span></span><span class="nv">client</span> <span class="nf">resetBreadcrumbs</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="configuration">
+<h2>Configuration<a class="headerlink" href="#configuration" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="event-configuration">
+<h3>Event Configuration<a class="headerlink" href="#event-configuration" title="Permalink to this headline">¶</a></h3>
+<p>All <em>capture</em> messages have a variant allowing further configuration of the event:</p>
+<div class="highlight-smalltalk notranslate"><div class="highlight"><pre><span></span><span class="nv">client</span> <span class="nf">captureMessage:</span> <span class="s">&#39;Foo!&#39;</span> <span class="nf">in:</span> [ <span class="o">:</span><span class="nv">event</span> <span class="o">|</span>
+	<span class="nv">event</span> <span class="nf">tags:</span> { <span class="s">&#39;foo&#39;</span> <span class="nf">-&gt;</span> <span class="s">&#39;bar&#39;</span> } <span class="nf">asDictionary</span><span class="p">.</span>
+	<span class="nv">event</span> <span class="nf">level:</span> <span class="s">&#39;warning&#39;</span><span class="p">.</span>
+	<span class="nv">event</span> <span class="nf">extra:</span> { <span class="s">&#39;uuid&#39;</span> <span class="nf">-&gt;</span> <span class="nc">UUID</span> <span class="nb">new</span> <span class="nf">asString</span> } <span class="nf">asDictionary</span><span class="p">.</span>
+]<span class="p">.</span>
+</pre></div>
+</div>
+<p>The argument in the block is an instance of <code class="docutils literal notranslate"><span class="pre">SentryEvent</span></code>.</p>
+</div>
+<div class="section" id="last-minute-configuration">
+<h3>Last-minute Configuration<a class="headerlink" href="#last-minute-configuration" title="Permalink to this headline">¶</a></h3>
+<p>To globally configure an event, <code class="docutils literal notranslate"><span class="pre">beforeSend:</span></code> can be used.
+The provided block will be called just before the actual transport of the event:</p>
+<div class="highlight-smalltalk notranslate"><div class="highlight"><pre><span></span><span class="nv">client</span> <span class="nf">beforeSend:</span> [ <span class="o">:</span><span class="nv">event</span> <span class="o">|</span> <span class="nv">event</span> <span class="nf">tags:</span> {<span class="s">&#39;foo&#39;</span> <span class="nf">-&gt;</span> <span class="s">&#39;bar&#39;</span>} <span class="nf">asDictionary</span> ]
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last"><code class="docutils literal notranslate"><span class="pre">beforeSend:</span></code> will be replaced in favor of direct context configuration.</p>
+</div>
+</div>
+<div class="section" id="context-configuration">
+<h3>Context Configuration<a class="headerlink" href="#context-configuration" title="Permalink to this headline">¶</a></h3>
+<p>Context common to all events be configured using <code class="docutils literal notranslate"><span class="pre">merge:</span></code>:</p>
+<div class="highlight-smalltalk notranslate"><div class="highlight"><pre><span></span><span class="nv">client</span> <span class="nf">context</span> <span class="nf">merge:</span> { <span class="s">&#39;user&#39;</span> <span class="nf">-&gt;</span> {
+	<span class="s">&#39;id&#39;</span> <span class="nf">-&gt;</span> <span class="nc">UUID</span> <span class="nb">new</span> <span class="nf">asString</span><span class="p">.</span>
+	<span class="s">&#39;email&#39;</span> <span class="nf">-&gt;</span> <span class="s">&#39;me@example.com&#39;</span> } <span class="nf">asDictionary</span> }<span class="p">.</span>
+</pre></div>
+</div>
+<p>To clear context, use <code class="docutils literal notranslate"><span class="pre">clear</span></code>:</p>
+<div class="highlight-smalltalk notranslate"><div class="highlight"><pre><span></span><span class="nv">client</span> <span class="nf">clear</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="pharo-specific">
+<h2>Pharo-Specific<a class="headerlink" href="#pharo-specific" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="in-app-configuration">
+<h3>in_app Configuration<a class="headerlink" href="#in-app-configuration" title="Permalink to this headline">¶</a></h3>
+<p>The <a class="reference external" href="https://docs.sentry.io/clientdev/interfaces/stacktrace/">in_app</a> attribute is determined based on the package of the incriminating code.</p>
+<p>To specify your app packages, provide either a regex or a list of packages:</p>
+<div class="highlight-smalltalk notranslate"><div class="highlight"><pre><span></span><span class="c">&quot;Packages as regex&quot;</span>
+<span class="nv">client</span> <span class="nf">appPackages:</span> <span class="s">&#39;Sentry-*|Beacon-Core&#39;</span><span class="p">.</span>
+
+<span class="c">&quot;Collection of packages&quot;</span>
+<span class="nv">client</span> <span class="nf">appPackages:</span> { <span class="s">&#39;Sentry-Core&#39;</span> <span class="nf">asPackage</span><span class="p">.</span> <span class="s">&#39;Beacon-Core&#39;</span> <span class="nf">asPackage</span> }
+</pre></div>
+</div>
+</div>
+<div class="section" id="retrieving-last-event">
+<h3>Retrieving Last Event<a class="headerlink" href="#retrieving-last-event" title="Permalink to this headline">¶</a></h3>
+<p>The last event that was sent can still be accessed on the client:</p>
+<div class="highlight-smalltalk notranslate"><div class="highlight"><pre><span></span><span class="nc">UIManager</span> <span class="nf">default</span> <span class="nf">alert:</span> <span class="s">&#39;Error reported as &#39;</span><span class="nf">,</span> <span class="nv">client</span> <span class="nf">lastEvent</span> <span class="nf">eventIdString</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="beacon.html" class="btn btn-neutral float-right" title="Beacon" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="getting_started.html" class="btn btn-neutral" title="Getting Started" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, Peter Uhnak.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'0.2.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

@@ -1,0 +1,7 @@
+==================
+Debugger Extension
+==================
+
+When sentry is enabled, a new button *Report (Sentry)* will appear in the PreDebugWindow. Clicking the button will dispatch the exception to the sentry server.
+
+.. image:: figures/sentry-debugger.png
