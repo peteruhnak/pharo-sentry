@@ -75,3 +75,8 @@ Likewise string-based signals are serialized into sentry messages::
 	SentryLogger start.
 	StringSignal emit: 'test'.
 	SentryLogger stop.
+
+.. |travis| image:: https://travis-ci.org/peteruhnak/pharo-sentry.svg?branch=master
+    :target: https://travis-ci.org/peteruhnak/pharo-sentry
+.. |coveralls| image:: https://coveralls.io/repos/github/peteruhnak/pharo-sentry/badge.svg?branch=master
+    :target: https://coveralls.io/github/peteruhnak/pharo-sentry?branch=master
