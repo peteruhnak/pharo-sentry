@@ -23,7 +23,7 @@ Installation
 
 	Metacello new
 		baseline: 'Sentry';
-		repository: 'github://peteruhnak/pharo-sentry:v0.2.2/repository';
+		repository: 'github://peteruhnak/pharo-sentry:v0.2.3/repository';
 		load
 
 Basic Usage
