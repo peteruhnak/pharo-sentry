@@ -86,9 +86,11 @@ Context Configuration
 
 Context common to all events be configured using ``merge:``::
 
-	client context merge: { 'user' -> {
-		'id' -> UUID new asString.
-		'email' -> 'me@example.com' } asDictionary }.
+	client context merge: {
+      'release' -> 'v1.7.3'.
+      'user' -> {
+		   'id' -> UUID new asString.
+   		'email' -> 'me@example.com' } asDictionary }.
 
 To clear context, use ``clear``::
 
