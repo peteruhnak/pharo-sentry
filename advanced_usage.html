@@ -261,9 +261,11 @@ The provided block will be called just before the actual transport of the event:
 <div class="section" id="context-configuration">
 <h3>Context Configuration<a class="headerlink" href="#context-configuration" title="Permalink to this headline">¶</a></h3>
 <p>Context common to all events be configured using <code class="docutils literal notranslate"><span class="pre">merge:</span></code>:</p>
-<div class="highlight-smalltalk notranslate"><div class="highlight"><pre><span></span><span class="nv">client</span> <span class="nf">context</span> <span class="nf">merge:</span> { <span class="s">&#39;user&#39;</span> <span class="nf">-&gt;</span> {
-	<span class="s">&#39;id&#39;</span> <span class="nf">-&gt;</span> <span class="nc">UUID</span> <span class="nb">new</span> <span class="nf">asString</span><span class="p">.</span>
-	<span class="s">&#39;email&#39;</span> <span class="nf">-&gt;</span> <span class="s">&#39;me@example.com&#39;</span> } <span class="nf">asDictionary</span> }<span class="p">.</span>
+<div class="highlight-smalltalk notranslate"><div class="highlight"><pre><span></span>  <span class="nv">client</span> <span class="nf">context</span> <span class="nf">merge:</span> {
+<span class="s">&#39;release&#39;</span> <span class="nf">-&gt;</span> <span class="s">&#39;v1.7.3&#39;</span><span class="p">.</span>
+<span class="s">&#39;user&#39;</span> <span class="nf">-&gt;</span> {
+	     <span class="s">&#39;id&#39;</span> <span class="nf">-&gt;</span> <span class="nc">UUID</span> <span class="nb">new</span> <span class="nf">asString</span><span class="p">.</span>
+	  <span class="s">&#39;email&#39;</span> <span class="nf">-&gt;</span> <span class="s">&#39;me@example.com&#39;</span> } <span class="nf">asDictionary</span> }<span class="p">.</span>
 </pre></div>
 </div>
 <p>To clear context, use <code class="docutils literal notranslate"><span class="pre">clear</span></code>:</p>
