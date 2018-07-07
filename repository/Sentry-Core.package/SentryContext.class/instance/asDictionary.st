@@ -1,3 +1,3 @@
 accessing - special
 asDictionary
-	^ self asDictionary: #() optional: #(user request extra tags)
+	^ self asDictionary: #() optional: #(user release request extra tags)

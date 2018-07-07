@@ -9,7 +9,8 @@
 		"user",
 		"request",
 		"extra",
-		"tags"
+		"tags",
+		"release"
 	],
 	"name" : "SentryContext",
 	"type" : "normal"
