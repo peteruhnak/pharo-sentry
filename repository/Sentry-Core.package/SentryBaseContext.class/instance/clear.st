@@ -1,3 +1,0 @@
-converting
-clear
-	self subclassResponsibility

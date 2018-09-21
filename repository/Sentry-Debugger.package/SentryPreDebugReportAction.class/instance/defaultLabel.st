@@ -1,3 +1,0 @@
-actions
-defaultLabel
-	^ 'Report (Sentry)'

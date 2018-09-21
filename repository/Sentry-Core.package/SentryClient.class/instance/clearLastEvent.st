@@ -1,3 +1,0 @@
-accessing
-clearLastEvent
-	lastEvent := nil

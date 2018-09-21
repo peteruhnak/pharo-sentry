@@ -1,3 +1,0 @@
-accessing
-dsn
-	^ dsn
