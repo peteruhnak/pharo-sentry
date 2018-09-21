@@ -44,7 +44,7 @@ SentrySignalSerializer >> serializeExceptionSignal: anExceptionSignal logger: aL
 						type: exception class name;
 						value: exception messageText;
 						module: exception class package name;
-						stacktrace: (self stacktraceFor: anExceptionSignal stack)}).
+						stacktrace: (self stacktraceFor: anExceptionSignal stack exception: anExceptionSignal exception)}).
 	^ event
 ]
 
@@ -68,15 +68,6 @@ SentrySignalSerializer >> serializeWrapperSignal: aWrapperSignal logger: aLogger
 ]
 
 { #category : #capturing }
-SentrySignalSerializer >> stacktraceFor: aStack [
-	| frames |
-	frames := aStack
-		collect: [ :aNode | 
-			| methodNode |
-			methodNode := aNode methodNode.
-			SentryFrame new
-				method: methodNode;
-				code: aNode source start: aNode sourceInterval first;
-				inApp: (Sentry default isMethodInApp: methodNode) ].
-	^ SentryStacktrace new frames: frames reversed asArray
+SentrySignalSerializer >> stacktraceFor: aStack exception: anException [
+	^ Sentry default stacktraceFor: anException
 ]
