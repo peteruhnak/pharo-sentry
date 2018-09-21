@@ -217,14 +217,17 @@ SentryClient >> sendSampleMessage [
 SentryClient >> stacktraceFor: anException [
 	| frames |
 	frames := anException signalerContext stack
-		collect: [ :context | 
+		collect: [ :ctx | 
 			| method interval |
-			method := context method.
-			interval := context debuggerMap rangeForPC: context pc.
+			method := ctx method.
+			interval := ctx debuggerMap rangeForPC: ctx pc.
 			SentryFrame new
 				method: method;
-				code: context sourceCode start: interval first;
-				inApp: (self isMethodInApp: method) ].
+				code: ctx sourceCode start: interval first;
+				inApp: (self isMethodInApp: method);
+				vars:
+					{'_receiver' -> ctx receiver printString.
+					'_context' -> ctx printString} asDictionary ].
 	^ SentryStacktrace new frames: frames reversed asArray
 ]
 
