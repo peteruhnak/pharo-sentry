@@ -1,3 +1,0 @@
-actions
-id
-	^ #sentryPreDebugReportAction

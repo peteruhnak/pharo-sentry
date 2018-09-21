@@ -1,3 +1,0 @@
-accessing
-dsnString
-	^ dsn asString

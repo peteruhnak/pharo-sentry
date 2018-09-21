@@ -1,3 +1,0 @@
-accessing
-defaultTransport
-	^ SentryHttpTransport new
