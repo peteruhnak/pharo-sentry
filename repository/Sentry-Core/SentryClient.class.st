@@ -226,8 +226,8 @@ SentryClient >> stacktraceFor: anException [
 				code: ctx sourceCode start: interval first;
 				inApp: (self isMethodInApp: method);
 				vars:
-					{'_receiver' -> ctx receiver printString.
-					'_context' -> ctx printString} asDictionary ].
+					{'_receiver' -> (ctx receiver printStringLimitedTo: 120).
+					'_context' -> (ctx printStringLimitedTo: 120)} asDictionary ].
 	^ SentryStacktrace new frames: frames reversed asArray
 ]
 
