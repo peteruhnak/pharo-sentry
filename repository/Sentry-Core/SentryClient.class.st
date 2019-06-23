@@ -243,7 +243,7 @@ SentryClient >> transport: aTransport [
 
 { #category : #validation }
 SentryClient >> validateDsn: aDsn [
-	"scheme://username:password@host/path"
+	"scheme://username@host/path"
 
 	"Empty DSN disables the client."
 
@@ -254,9 +254,6 @@ SentryClient >> validateDsn: aDsn [
 	self
 		assert: [ aDsn username isNotNil and: [ aDsn username isNotEmpty ] ]
 		description: 'username is missing in the DSN'.
-	self
-		assert: [ aDsn password isNotNil and: [ aDsn password isNotEmpty ] ]
-		description: 'password is missing in the DSN'.
 	self
 		assert: [ aDsn host isNotNil and: [ aDsn host isNotEmpty ] ]
 		description: 'host is missing in the DSN'.
