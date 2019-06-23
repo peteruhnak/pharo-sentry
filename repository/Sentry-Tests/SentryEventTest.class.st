@@ -46,7 +46,7 @@ SentryEventTest >> testAsDictionary [
 					{'runtime'
 						->
 							{'name' -> 'Pharo'.
-							'version' -> SystemVersion current highestUpdate} asDictionary} asDictionary}
+							'version' -> SystemVersion current highestUpdate asString} asDictionary} asDictionary}
 				asDictionary
 ]
 
