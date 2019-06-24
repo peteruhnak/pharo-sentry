@@ -36,7 +36,7 @@ Exceptions are automatically serialized and dispatched:
 
 .. code-block:: smalltalk
 
-	client := SentryClient dsn: 'https://<key>:<secret>@sentry.io/<project>'.
+	client := SentryClient dsn: 'https://<key>@sentry.io/<project>'.
 
 	[ 1 / 0 ] on: ZeroDivide do: [ :ex |
 		client captureException: ex
