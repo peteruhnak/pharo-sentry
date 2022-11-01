@@ -16,7 +16,7 @@ Class {
 		'transport',
 		'lastEvent'
 	],
-	#category : 'Sentry-Core-Model'
+	#category : #'Sentry-Core-Model'
 }
 
 { #category : #'instance creation' }
@@ -220,7 +220,7 @@ SentryClient >> stacktraceFor: anException [
 		collect: [ :ctx | 
 			| method interval |
 			method := ctx method.
-			interval := ctx debuggerMap rangeForPC: ctx pc.
+			interval := (method sourceNodeForPC: ctx pc) debugHighlightRange.
 			SentryFrame new
 				method: method;
 				code: ctx sourceCode start: interval first;
